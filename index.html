@@ -176,9 +176,46 @@ button{height:50px;padding:0 26px;border:0;font:700 15px Rajdhani,sans-serif;let
   .info div{padding:11px}.actions{min-height:125px;flex-direction:column}
   button{width:180px}.no{position:absolute}.success-info{grid-template-columns:1fr}
 }
+
+.mobile-gate{display:none}
+@media(max-width:600px){
+  .mobile-gate{display:flex;position:fixed;inset:0;z-index:999;min-height:100vh;align-items:center;justify-content:center;padding:22px;background:radial-gradient(circle at 50% 45%,rgba(255,70,85,.12),transparent 42%),#07070b;overflow:hidden}
+  .mobile-gate:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:40px 40px;transform:perspective(500px) rotateX(58deg) scale(1.4);opacity:.35}
+  .gate-panel{position:relative;width:min(420px,100%);padding:40px 24px 29px;text-align:center;background:linear-gradient(145deg,rgba(30,30,38,.97),rgba(9,9,14,.99));border:1px solid rgba(255,70,85,.35);box-shadow:0 30px 80px rgba(0,0,0,.65),0 0 70px rgba(255,70,85,.09);clip-path:polygon(0 14px,14px 0,calc(100% - 14px) 0,100% 14px,100% calc(100% - 14px),calc(100% - 14px) 100%,14px 100%,0 calc(100% - 14px));animation:gateIn .65s ease both}
+  .gate-glitch{color:#ff4655;font:700 13px Rajdhani,sans-serif;letter-spacing:4px}
+  .gate-code{margin-top:9px;color:#686872;font:600 9px Rajdhani,sans-serif;letter-spacing:1.5px}
+  .gate-line{height:1px;margin:22px auto;background:linear-gradient(90deg,transparent,#ff4655,transparent)}
+  .gate-icon{width:54px;height:54px;margin:0 auto 18px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,70,85,.45);color:#ff4655;font:400 42px/1 Inter,sans-serif;transform:rotate(45deg)}
+  .gate-icon span{transform:rotate(-45deg)}
+  .gate-panel h1{font-size:52px}
+  .gate-message{margin-top:20px;color:#c2c2c9;font-size:14px;line-height:1.8}
+  .gate-status{display:flex;justify-content:space-between;align-items:center;margin-top:27px;padding:13px 14px;text-align:left;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.07)}
+  .gate-status span{color:#858591;font:600 9px Rajdhani,sans-serif;letter-spacing:1.5px}
+  .gate-status strong{color:#ff4655;font:700 11px Rajdhani,sans-serif}
+  .gate-hint{margin-top:17px;color:#555560;font:600 9px Rajdhani,sans-serif;letter-spacing:1.5px}
+  main,.hud,#particles{display:none}
+}
+@keyframes gateIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+
 </style>
 </head>
 <body>
+<div class="mobile-gate">
+  <div class="gate-panel">
+    <div class="gate-glitch">ROUND FAILED</div>
+    <div class="gate-code">ERROR 0xREYNA // DEVICE NOT QUALIFIED</div>
+    <div class="gate-line"></div>
+    <div class="gate-icon"><span>×</span></div>
+    <h1>MISSION<span>FAILED.</span></h1>
+    <p class="gate-message">Please use laptop or desktop baby<br>to see it. ❤️</p>
+    <div class="gate-status">
+      <span>DEVICE STATUS</span>
+      <strong>MOBILE DETECTED</strong>
+    </div>
+    <div class="gate-hint">RETURN WITH A DESKTOP DEVICE TO CONTINUE</div>
+  </div>
+</div>
+
 <div class="bg"><div class="grid"></div><div class="glow g1"></div><div class="glow g2"></div><div class="scan"></div></div>
 <div id="particles"></div>
 
@@ -209,7 +246,7 @@ button{height:50px;padding:0 26px;border:0;font:700 15px Rajdhani,sans-serif;let
     <div class="question">Reyna, will you be my <span>date?</span></div>
 
     <div class="actions" id="actions">
-      <button class="yes" id="yes">♥ &nbsp; YES, BABE!</button>
+      <button class="yes" id="yes">♥ &nbsp; YES, I'M IN</button>
       <button class="no" id="no">NO</button>
     </div>
     <div class="escape-log" id="escapeLog" aria-live="polite"></div>
