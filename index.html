@@ -3,387 +3,164 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Operation: HARANA ❤️</title>
+<title>Happy Birthday, Babe 🌻</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap');
-
-:root{
-  --bg:#07070b;--panel:rgba(17,17,24,.92);--red:#ff4655;--pink:#ff8292;
-  --white:#f7f7f8;--muted:#858591;--line:rgba(255,70,85,.28);
-}
+:root{--sun:#f5b700;--gold:#ffd84d;--deep:#241707;--cream:#fff8df;--muted:#d9c99e}
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{width:100%;height:100%}
-body{font-family:Inter,sans-serif;background:var(--bg);color:var(--white);overflow:hidden}
-.bg{position:fixed;inset:0;pointer-events:none;overflow:hidden}
-.grid{position:absolute;inset:-50%;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:48px 48px;transform:perspective(500px) rotateX(58deg);opacity:.45}
-.glow{position:absolute;width:480px;height:480px;border-radius:50%;filter:blur(110px);opacity:.13}
-.g1{top:-230px;left:-160px;background:var(--red)} .g2{right:-240px;bottom:-240px;background:#ff164b}
-.scan{position:absolute;left:0;right:0;top:-10%;height:1px;background:linear-gradient(90deg,transparent,var(--red),transparent);opacity:.2;animation:scan 7s linear infinite}
-@keyframes scan{to{top:110%}}
-
-.hud{position:fixed;z-index:3;font:600 10px Rajdhani,sans-serif;letter-spacing:2px;color:var(--muted);text-transform:uppercase}
-.hud b{display:block;color:var(--white);font-size:15px;letter-spacing:3px;margin-top:3px}
-.tl{top:28px;left:32px}.tr{top:28px;right:32px;text-align:right}.bl{bottom:24px;left:32px}.br{bottom:28px;right:32px}
-
-#particles{position:fixed;inset:0;pointer-events:none}
-.p{position:absolute;width:3px;height:3px;background:rgba(255,255,255,.45);transform:rotate(45deg);animation:float linear infinite}
-@keyframes float{from{transform:translateY(105vh) rotate(45deg);opacity:0}20%{opacity:1}to{transform:translateY(-15vh) rotate(405deg);opacity:0}}
-
-main{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px}
-.card,.success{width:min(650px,100%);position:relative;text-align:center}
-.card{position:relative;overflow:visible;padding:48px 54px 40px;background:linear-gradient(145deg,rgba(29,29,38,.97),rgba(10,10,15,.98));border:1px solid var(--line);clip-path:polygon(0 14px,14px 0,calc(100% - 14px) 0,100% 14px,100% calc(100% - 14px),calc(100% - 14px) 100%,14px 100%,0 calc(100% - 14px));box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 70px rgba(255,70,85,.08);animation:in .8s ease both}
-.card:before{content:"";position:absolute;top:0;left:15%;width:70%;height:1px;background:linear-gradient(90deg,transparent,var(--red),transparent)}
-.card:after{content:"";position:absolute;left:0;top:30%;width:2px;height:40%;background:var(--red);opacity:.75}
-@keyframes in{from{opacity:0;transform:translateY(22px) scale(.97)}to{opacity:1;transform:none}}
-
-.classify{display:flex;align-items:center;justify-content:center;gap:8px;color:var(--muted);font:600 10px Rajdhani,sans-serif;letter-spacing:2px;text-transform:uppercase}
-.dot{width:6px;height:6px;border-radius:50%;background:var(--red);box-shadow:0 0 10px var(--red);animation:pulse 1.5s infinite}
-@keyframes pulse{50%{opacity:.35}}
-
-.heart{width:54px;height:54px;margin:24px auto 12px;border:1px solid rgba(255,70,85,.4);display:flex;align-items:center;justify-content:center;color:var(--red);font-size:25px;transform:rotate(45deg);animation:beat 2s infinite}
-.heart span{transform:rotate(-45deg)}
-@keyframes beat{50%{transform:rotate(45deg) scale(1.08)}}
-
-.eyebrow{margin-top:23px;color:var(--muted);font-size:10px;font-weight:700;letter-spacing:3px}
-h1{font:700 clamp(44px,8vw,72px)/.92 Rajdhani,sans-serif;letter-spacing:2px;text-transform:uppercase;margin-top:8px}
-h1 span{display:block;color:var(--red);text-shadow:0 0 28px rgba(255,70,85,.25)}
-.divider{width:90px;height:1px;background:var(--red);margin:23px auto}
-.message{max-width:455px;margin:auto;color:#bdbdc5;font-size:14px;line-height:1.8}
-.festival-name{
-  margin-top:10px;
-  color:rgba(255,130,146,.72);
-  font:600 10px Rajdhani,sans-serif;
-  letter-spacing:2px;
-  text-transform:uppercase;
-}
-
-
-.info{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.08);margin:28px 0;border:1px solid rgba(255,255,255,.06)}
-.info div{padding:13px 9px;background:rgba(255,255,255,.025)}
-.info small{display:block;color:var(--muted);font:600 9px Rajdhani,sans-serif;letter-spacing:1.5px;margin-bottom:5px}
-.info strong{font-size:11px;line-height:1.4}
-.question{font:600 28px Rajdhani,sans-serif;text-transform:uppercase;letter-spacing:1px;margin-top:28px}
-.question span{color:var(--pink)}
-
-.actions{position:relative;min-height:58px;display:flex;align-items:center;justify-content:center;gap:14px;margin-top:22px}
-button{height:50px;padding:0 26px;border:0;font:700 15px Rajdhani,sans-serif;letter-spacing:1.5px;cursor:pointer}
-.yes{color:#fff;background:var(--red);clip-path:polygon(0 8px,8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%);box-shadow:0 8px 25px rgba(255,70,85,.25);transition:.2s}
-.yes:hover{transform:translateY(-3px);box-shadow:0 12px 35px rgba(255,70,85,.4)}
-.no{color:#aaa;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);transition:left .2s ease,top .2s ease,transform .2s ease;z-index:20}
-.note{margin-top:14px;color:#555560;font-size:10px;letter-spacing:1px}
-.escape-log{
-  position:absolute;
-  inset:18px;
-  pointer-events:none;
-  overflow:hidden;
-  z-index:4;
-}
-.escape-line{
-  position:absolute;
-  max-width:190px;
-  padding:7px 10px;
-  color:rgba(255,130,146,.72);
-  border-left:2px solid rgba(255,70,85,.5);
-  background:rgba(255,70,85,.045);
-  font:600 11px/1.25 Rajdhani,sans-serif;
-  letter-spacing:1px;
-  text-transform:uppercase;
-  transform:translateY(5px);
-  opacity:0;
-  animation:escapeLineIn .35s ease forwards;
-}
-@keyframes escapeLineIn{
-  to{opacity:1;transform:translateY(0)}
-}
-
-
-.success{display:none;animation:success .8s ease both}
-.win-banner{
-  position:relative;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-width:min(430px,90vw);
-  margin-bottom:18px;
-  padding:12px 38px;
-  border:1px solid rgba(255,255,255,.28);
-  background:linear-gradient(90deg,rgba(255,255,255,.06),rgba(255,70,85,.12),rgba(255,255,255,.06));
-  clip-path:polygon(0 0,100% 0,94% 100%,6% 100%);
-  font:700 clamp(42px,9vw,76px)/.9 Rajdhani,sans-serif;
-  letter-spacing:7px;
-  color:#fff;
-  text-shadow:0 0 25px rgba(255,255,255,.18);
-  animation:winReveal .75s cubic-bezier(.2,.8,.2,1) both;
-}
-.win-banner:before,.win-banner:after{
-  content:"";
-  position:absolute;
-  top:50%;
-  width:70px;
-  height:1px;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,.7));
-}
-.win-banner:before{right:100%}
-.win-banner:after{left:100%;transform:scaleX(-1)}
-.win-sub{
-  margin-bottom:20px;
-  color:var(--red);
-  font:700 11px Rajdhani,sans-serif;
-  letter-spacing:4px;
-  text-transform:uppercase;
-  animation:fadeUp .6s .25s both;
-}
-@keyframes winReveal{
-  from{opacity:0;transform:scaleX(.65) translateY(12px);filter:blur(5px)}
-  to{opacity:1;transform:scaleX(1) translateY(0);filter:blur(0)}
-}
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(8px)}
-  to{opacity:1;transform:none}
-}
-.success.active{display:block}
-.card.hide{display:none}
-@keyframes success{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
-.success-heart{width:88px;height:88px;margin:0 auto 25px;border:1px solid rgba(255,70,85,.45);display:flex;align-items:center;justify-content:center;color:var(--red);font-size:42px;transform:rotate(45deg);animation:beat2 1.5s infinite}
-.success-heart span{transform:rotate(-45deg)}
-@keyframes beat2{50%{transform:rotate(45deg) scale(1.1)}}
-.success h1{margin-top:18px}
-.success-msg{margin-top:18px;color:#bbb;line-height:1.7}
-.success-info{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.08);margin-top:32px}
-.success-info div{padding:18px 9px;background:rgba(255,255,255,.035)}
-.success-info small{display:block;color:var(--muted);font-size:9px;letter-spacing:2px;margin-bottom:6px}
-.success-info strong{font:600 14px Rajdhani,sans-serif;letter-spacing:1px}
-.final{margin-top:27px;color:var(--pink);font:600 18px Rajdhani,sans-serif;letter-spacing:1px}
-
-.confetti{position:fixed;top:-20px;z-index:10;font-size:12px;animation:fall linear forwards;pointer-events:none}
-@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:0}}
-
-
-@media(min-width:601px){
-  .event-info div:nth-child(4) strong,
-  .event-info div:nth-child(5) strong{
-    font-size:10px;
-  }
-  .success-info div:nth-child(4),
-  .success-info div:nth-child(5),
-  .success-info div:nth-child(6){
-    border-top:1px solid rgba(255,255,255,.04);
-  }
-}
-@media(max-width:600px){
-  .hud{display:none} main{padding:18px}.card{padding:38px 23px 30px}
-  h1{font-size:48px}.message{font-size:13px}.info{grid-template-columns:1fr}
-  .info div{padding:11px}.actions{min-height:125px;flex-direction:column}
-  button{width:180px}.no{position:absolute}.success-info{grid-template-columns:1fr}
-}
-
-.mobile-gate{display:none}
-@media(max-width:600px){
-  .mobile-gate{display:flex;position:fixed;inset:0;z-index:999;min-height:100vh;align-items:center;justify-content:center;padding:22px;background:radial-gradient(circle at 50% 45%,rgba(255,70,85,.12),transparent 42%),#07070b;overflow:hidden}
-  .mobile-gate:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:40px 40px;transform:perspective(500px) rotateX(58deg) scale(1.4);opacity:.35}
-  .gate-panel{position:relative;width:min(420px,100%);padding:40px 24px 29px;text-align:center;background:linear-gradient(145deg,rgba(30,30,38,.97),rgba(9,9,14,.99));border:1px solid rgba(255,70,85,.35);box-shadow:0 30px 80px rgba(0,0,0,.65),0 0 70px rgba(255,70,85,.09);clip-path:polygon(0 14px,14px 0,calc(100% - 14px) 0,100% 14px,100% calc(100% - 14px),calc(100% - 14px) 100%,14px 100%,0 calc(100% - 14px));animation:gateIn .65s ease both}
-  .gate-glitch{color:#ff4655;font:700 13px Rajdhani,sans-serif;letter-spacing:4px}
-  .gate-code{margin-top:9px;color:#686872;font:600 9px Rajdhani,sans-serif;letter-spacing:1.5px}
-  .gate-line{height:1px;margin:22px auto;background:linear-gradient(90deg,transparent,#ff4655,transparent)}
-  .gate-icon{width:54px;height:54px;margin:0 auto 18px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,70,85,.45);color:#ff4655;font:400 42px/1 Inter,sans-serif;transform:rotate(45deg)}
-  .gate-icon span{transform:rotate(-45deg)}
-  .gate-panel h1{font-size:52px}
-  .gate-message{margin-top:20px;color:#c2c2c9;font-size:14px;line-height:1.8}
-  .gate-status{display:flex;justify-content:space-between;align-items:center;margin-top:27px;padding:13px 14px;text-align:left;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.07)}
-  .gate-status span{color:#858591;font:600 9px Rajdhani,sans-serif;letter-spacing:1.5px}
-  .gate-status strong{color:#ff4655;font:700 11px Rajdhani,sans-serif}
-  .gate-hint{margin-top:17px;color:#555560;font:600 9px Rajdhani,sans-serif;letter-spacing:1.5px}
-  main,.hud,#particles{display:none}
-}
-@keyframes gateIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
-
+html{scroll-behavior:smooth}
+body{min-height:100vh;overflow-x:hidden;color:var(--cream);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at 50% 10%,rgba(245,183,0,.18),transparent 30%),radial-gradient(circle at 15% 80%,rgba(109,143,61,.13),transparent 30%),linear-gradient(145deg,#100b03,#241707 48%,#0d0903)}
+button{font:inherit}
+.screen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:30px 18px;position:relative}
+.glow{position:absolute;width:360px;height:360px;border-radius:50%;background:rgba(245,183,0,.12);filter:blur(70px);pointer-events:none}
+.card{width:min(720px,100%);position:relative;z-index:2;padding:clamp(28px,6vw,60px);border:1px solid rgba(255,216,77,.25);background:rgba(30,20,5,.78);box-shadow:0 30px 100px rgba(0,0,0,.45);backdrop-filter:blur(14px);border-radius:28px;text-align:center}
+.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.3em;color:var(--gold);font-weight:800;margin-bottom:18px}
+h1{font-size:clamp(42px,9vw,76px);line-height:.95;letter-spacing:-.05em}
+.sub{color:var(--muted);line-height:1.7;margin:20px auto;max-width:560px}
+.sunflower{width:150px;height:150px;margin:0 auto 25px;display:grid;place-items:center;font-size:100px;cursor:pointer;user-select:none;filter:drop-shadow(0 15px 25px rgba(245,183,0,.2));animation:bob 4s ease-in-out infinite;transition:transform .3s}
+.sunflower:hover{transform:scale(1.06) rotate(3deg)}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.btn{min-height:50px;border:0;border-radius:14px;padding:13px 24px;cursor:pointer;font-weight:900;transition:.2s}
+.primary{background:var(--sun);color:#1d1200}.primary:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.secondary{background:transparent;color:var(--cream);border:1px solid rgba(255,216,77,.3)}.secondary:hover{background:rgba(255,216,77,.08)}
+.reveal{animation:reveal .8s ease both}
+@keyframes reveal{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+#birthday{display:none;padding-bottom:90px}
+.section{width:min(900px,100%);margin:auto;padding:30px 18px}
+.section-title{text-align:center;font-size:clamp(30px,6vw,50px);margin-bottom:12px}
+.section-copy{text-align:center;color:var(--muted);line-height:1.7;max-width:650px;margin:0 auto 30px}
+.info-grid,.memories{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.info{padding:22px;border-radius:18px;border:1px solid rgba(255,216,77,.17);background:rgba(255,255,255,.035);text-align:center}
+.info span{display:block;font-size:28px;margin-bottom:8px}.info b{font-size:14px}.info p{font-size:12px;color:var(--muted);margin-top:5px}
+.memories{margin-top:30px}
+.memory{min-height:170px;border:1px solid rgba(255,216,77,.18);border-radius:20px;background:linear-gradient(145deg,rgba(245,183,0,.09),rgba(255,255,255,.025));padding:24px;text-align:left;cursor:pointer;transition:.25s}
+.memory:hover{transform:translateY(-5px);border-color:rgba(255,216,77,.5)}
+.memory .icon{font-size:34px;margin-bottom:20px}.memory h3{font-size:17px;margin-bottom:7px}.memory p{font-size:13px;color:var(--muted);line-height:1.55}
+.memory.open{background:rgba(245,183,0,.12)}
+.letter{max-width:700px;margin:30px auto 0;padding:30px;border-radius:22px;background:rgba(255,248,223,.055);border:1px solid rgba(255,216,77,.18);line-height:1.9;color:var(--muted);text-align:left}
+.letter strong{color:var(--cream)}.letter p+p{margin-top:15px}.signature{color:var(--gold)!important;font-weight:900}
+.final{min-height:100vh;text-align:center;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:30px}
+.final-card{position:relative;z-index:2;max-width:680px}.final-card .big{font-size:clamp(70px,18vw,150px);line-height:.8;margin-bottom:28px}
+.final-card h2{font-size:clamp(35px,8vw,65px)}.final-card p{color:var(--muted);line-height:1.8;margin:18px auto;max-width:560px}
+.particle{position:fixed;top:-30px;pointer-events:none;z-index:20;animation:fall linear forwards}
+@keyframes fall{from{transform:translateY(-30px) rotate(0);opacity:1}to{transform:translateY(110vh) rotate(500deg);opacity:0}}
+@media(max-width:650px){.info-grid,.memories{grid-template-columns:1fr}.card{padding:32px 22px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
-<div class="mobile-gate">
-  <div class="gate-panel">
-    <div class="gate-glitch">ROUND FAILED</div>
-    <div class="gate-code">ERROR 0xREYNA // DEVICE NOT QUALIFIED</div>
-    <div class="gate-line"></div>
-    <div class="gate-icon"><span>×</span></div>
-    <h1>MISSION<span>FAILED.</span></h1>
-    <p class="gate-message">Please use laptop or desktop baby<br>to see it. ❤️</p>
-    <div class="gate-status">
-      <span>DEVICE STATUS</span>
-      <strong>MOBILE DETECTED</strong>
-    </div>
-    <div class="gate-hint">RETURN WITH A DESKTOP DEVICE TO CONTINUE</div>
-  </div>
+
+<section id="intro" class="screen">
+<div class="glow"></div>
+<div class="card">
+<div class="eyebrow">A little surprise for you</div>
+<div id="introFlower" class="sunflower" aria-label="Sunflower">🌻</div>
+<h1>Hey, Babe!.</h1>
+<p class="sub">It's your birthday... and I made something just for you.</p>
+<button id="openBtn" class="btn primary">Open your birthday surprise 🌻</button>
+</div>
+</section>
+
+<main id="birthday">
+<section class="screen" style="min-height:80vh">
+<div class="glow"></div>
+<div class="card reveal">
+<div class="eyebrow">October 15, 2026 • Birthday Mission</div>
+<div class="sunflower" id="mainFlower">🌻</div>
+<h1>Happy Birthday,<br>Babe. ❤️</h1>
+<p class="sub">If I could give you one thing today, I'd give you all the sunshine you bring into my life — and maybe a field full of sunflowers too.</p>
+<button id="startBtn" class="btn primary">There's more 🌻</button>
+</div>
+</section>
+
+<section class="section" id="surprises">
+<h2 class="section-title">A few things I wish for you</h2>
+<p class="section-copy">Tap each one. I made these little wishes specifically for my birthday girl.</p>
+<div class="info-grid">
+<div class="info"><span>☀️</span><b>More sunshine</b><p>More days that make you genuinely happy.</p></div>
+<div class="info"><span>🌻</span><b>More adventures</b><p>More places, stories, and memories together.</p></div>
+<div class="info"><span>❤️</span><b>More love</b><p>And yes, I'll gladly volunteer for this one.</p></div>
 </div>
 
-<div class="bg"><div class="grid"></div><div class="glow g1"></div><div class="glow g2"></div><div class="scan"></div></div>
-<div id="particles"></div>
+<div class="memories">
+<div class="memory" tabindex="0"><div class="icon">🌻</div><h3>Why sunflowers?</h3><p>Because I remember asking you what your favorite flower was, and you said sunflower. I remembered that and kept it in my mind. 🌻❤️</p></div>
+<div class="memory" tabindex="0"><div class="icon">✨</div><h3>My favorite thing</h3><p>Seeing you happy and seeing your smile—honestly, that's one of my favorite views in the world. I still remember your smile while you were sitting in my car at Savanno Park on September 25, 2026. It’s one of those little moments that stayed in my mind. ❤️🌻</p></div>
+<div class="memory" tabindex="0"><div class="icon">🥰</div><h3>My birthday wish</h3><p>That I get to celebrate many, many more birthdays with you babe!</p></div>
+</div>
 
-<div class="hud tl">OPERATION<b>HARANA</b></div>
-<div class="hud tr">STATUS<b id="status">WAITING</b></div>
-<div class="hud bl">CLASSIFIED<b>♡</b></div>
-<div class="hud br">01 / 01</div>
+<div class="letter">
+<p><strong>Happy birthday, Babe. ❤️</strong></p>
+<p>I hope this new year of your life brings you closer to every dream you've been quietly wishing for. I hope you laugh louder, smile more, and always remember just how loved you are.</p>
+<p>I chose sunflowers because you love this flower. They're warm. They're bright. They turn toward the light. And whenever I see one, I think of the happiness you bring into my life.</p>
+<p>Thank you for being you. Thank you for the little moments, the laughs, the chats, and even the ridiculous ones. I wouldn't trade them for anything.</p>
+<p><strong>Happy birthday, Babe.</strong> Here's to another year of you — and hopefully many more years of us. 🌻❤️</p>
+<p class="signature">— Your favorite person</p>
+</div>
 
-<main>
-  <section class="card" id="card">
-    <div class="classify"><i class="dot"></i> TOP SECRET // PERSONAL MISSION</div>
-    <div class="heart"><span>♥</span></div>
-    <p class="eyebrow">SPECIAL MISSION BRIEFING</p>
-    <p class="festival-name">HARANA ACOUSTIC MUSIC FESTIVAL</p>
-    <h1>Operation:<span>HARANA</span></h1>
-    <div class="divider"></div>
-    <p class="message">There is a mission I'd really like to complete... and I want to experience it with you.</p>
-
-    <div class="info event-info">
-      <div><small>DATE</small><strong>Saturday, November 28, 2026</strong></div>
-      <div><small>TIME</small><strong>Starts at 2:00 PM</strong></div>
-      <div><small>VENUE</small><strong>Filinvest City Events Grounds</strong></div>
-      <div><small>LOCATION</small><strong>Bridgeway Avenue, Alabang, Muntinlupa</strong></div>
-      <div><small>PRESENTED BY</small><strong>EPIC EVENTS</strong></div>
-      <div><small>MISSION TYPE</small><strong>Definitely a Date</strong></div>
-    </div>
-
-    <div class="question">Reyna, will you be my <span>date?</span></div>
-
-    <div class="actions" id="actions">
-      <button class="yes" id="yes">♥ &nbsp; YES, I'M IN</button>
-      <button class="no" id="no">NO</button>
-    </div>
-    <div class="escape-log" id="escapeLog" aria-live="polite"></div>
-    <p class="note">Choose wisely, agent.</p>
-  </section>
-
-  <section class="success" id="success">
-    <div class="win-banner">WON</div>
-    <div class="win-sub">ROUND COMPLETE // MISSION SUCCESS</div>
-    <div class="success-heart"><span>♥</span></div>
-    <div class="classify"><i class="dot"></i> MISSION STATUS: ACCEPTED</div>
-    <h1>DATE<span>CONFIRMED.</span></h1>
-    <p class="success-msg">Reyna accepted the mission. ❤️</p>
-    <div class="success-info">
-      <div><small>DATE</small><strong>NOV 28, 2026</strong></div>
-      <div><small>TIME</small><strong>2:00 PM</strong></div>
-      <div><small>PARTNER</small><strong>ME + REYNA</strong></div>
-      <div><small>DESTINATION</small><strong>HARANA ACOUSTIC MUSIC FESTIVAL</strong></div>
-      <div><small>VENUE</small><strong>FILINVEST CITY</strong></div>
-      <div><small>STATUS</small><strong>DATE CONFIRMED ♥</strong></div>
-    </div>
-    <p class="final">See you there, Reyna. 😈❤️</p>
-  </section>
+<div style="text-align:center;margin-top:35px">
+<button id="celebrateBtn" class="btn primary">Celebrate your birthday 🌻✨</button>
+</div>
+</section>
 </main>
 
+<section id="final" class="final" style="display:none">
+<div class="glow"></div>
+<div class="final-card reveal">
+<div class="big">🌻</div>
+<div class="eyebrow">Birthday Celebration Complete</div>
+<h2>You're my love of my life.</h2>
+<p>No matter how many birthdays come and go, I hope you always know that there is someone out here who will keep choosing you, cheering for you, waiting you, and loving you.</p>
+<p class="signature">Happy Birthday, Babe!. ❤️</p>
+<button id="againBtn" class="btn secondary">See it again</button>
+</div>
+</section>
+
 <script>
-const no=document.getElementById('no');
-const yes=document.getElementById('yes');
-const card=document.getElementById('card');
-const success=document.getElementById('success');
-const status=document.getElementById('status');
-const actions=document.getElementById('actions');
-let attempts=0;
+const intro=document.getElementById("intro");
+const birthday=document.getElementById("birthday");
+const final=document.getElementById("final");
 
-for(let i=0;i<45;i++){
-  const p=document.createElement('div'); p.className='p';
-  p.style.left=Math.random()*100+'%';
-  p.style.animationDuration=(6+Math.random()*9)+'s';
-  p.style.animationDelay=(Math.random()*8)+'s';
-  document.getElementById('particles').appendChild(p);
+function revealBirthday(){
+ intro.style.display="none";
+ birthday.style.display="block";
+ birthday.scrollIntoView({behavior:"smooth"});
 }
+document.getElementById("openBtn").addEventListener("click",revealBirthday);
+document.getElementById("introFlower").addEventListener("click",revealBirthday);
+document.getElementById("startBtn").addEventListener("click",()=>document.getElementById("surprises").scrollIntoView({behavior:"smooth"}));
 
-const negativeLines = [
-  "No.",
-  "Not interested.",
-  "Absolutely not.",
-  "You should reconsider.",
-  "Nice try.",
-  "Not happening.",
-  "You thought.",
-  "Try again.",
-  "Denied.",
-  "No chance. 😈"
-];
-
-function escapeNo(){
-  attempts++;
-
-  // The NO button stays inside the entire mission card.
-  if (no.parentElement !== card) card.appendChild(no);
-
-  no.style.position = 'absolute';
-  no.style.zIndex = '50';
-  no.style.transform = 'none';
-
-  const cardRect = card.getBoundingClientRect();
-  const btnRect = no.getBoundingClientRect();
-  const padX = 24;
-  const padY = 24;
-
-  const minX = padX;
-  const maxX = Math.max(minX, cardRect.width - btnRect.width - padX);
-  const minY = padY;
-  const maxY = Math.max(minY, cardRect.height - btnRect.height - padY);
-
-  let x, y, tries = 0;
-  const oldX = parseFloat(no.dataset.x || '-9999');
-  const oldY = parseFloat(no.dataset.y || '-9999');
-
-  do {
-    x = minX + Math.random() * Math.max(0, maxX - minX);
-    y = minY + Math.random() * Math.max(0, maxY - minY);
-    tries++;
-  } while(Math.hypot(x-oldX,y-oldY) < 100 && tries < 20);
-
-  no.dataset.x = x;
-  no.dataset.y = y;
-  no.style.left = `${x}px`;
-  no.style.top = `${y}px`;
-
-  const log = document.getElementById('escapeLog');
-  const line = document.createElement('div');
-  line.className = 'escape-line';
-  line.textContent = negativeLines[Math.min(attempts-1, negativeLines.length-1)];
-
-  // Leave the response somewhere different in the card.
-  const maxLX = Math.max(10, cardRect.width - 210);
-  const maxLY = Math.max(10, cardRect.height - 40);
-  line.style.left = `${10 + Math.random() * (maxLX - 10)}px`;
-  line.style.top = `${10 + Math.random() * (maxLY - 10)}px`;
-
-  log.appendChild(line);
-
-  // Keep the visual chaos tasteful instead of filling the whole screen.
-  while(log.children.length > 7) log.firstElementChild.remove();
-
-  if(attempts===2) no.textContent='ARE YOU SURE?';
-  if(attempts===4) no.textContent='REALLY?';
-  if(attempts===6) no.textContent='NICE TRY 😏';
-  if(attempts>=8) no.textContent='NOPE 😂';
-}
-no.addEventListener('mouseenter',escapeNo);
-no.addEventListener('touchstart',e=>{e.preventDefault();escapeNo()},{passive:false});
-no.addEventListener('click',e=>{e.preventDefault();escapeNo()});
-
-
-yes.addEventListener('click',()=>{
-  status.textContent='ACCEPTED';
-  card.classList.add('hide');
-  success.classList.add('active');
-  document.body.animate(
-    [{transform:'translateX(0)'},{transform:'translateX(-4px)'},{transform:'translateX(4px)'},{transform:'translateX(0)'}],
-    {duration:350}
-  );
-  const symbols=['♥','✦','◆','✧'];
-  for(let i=0;i<90;i++){
-    const c=document.createElement('div'); c.className='confetti';
-    c.textContent=symbols[Math.floor(Math.random()*symbols.length)];
-    c.style.left=Math.random()*100+'vw';
-    c.style.animationDuration=(2+Math.random()*3)+'s';
-    c.style.animationDelay=Math.random()*.7+'s';
-    c.style.color=Math.random()>.5?'#ff4655':'#fff';
-    document.body.appendChild(c);
-    setTimeout(()=>c.remove(),6000);
-  }
+document.querySelectorAll(".memory").forEach(card=>{
+ const open=()=>card.classList.toggle("open");
+ card.addEventListener("click",open);
+ card.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" ")open()});
 });
-setTimeout(()=>{if(!success.classList.contains('active'))status.textContent='AWAITING RESPONSE'},3000);
+
+function shower(){
+ if(window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+ const symbols=["🌻","🌼","✨","💛","❤️"];
+ for(let i=0;i<55;i++){
+  const p=document.createElement("span");
+  p.className="particle";
+  p.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+  p.style.left=Math.random()*100+"vw";
+  p.style.fontSize=(16+Math.random()*22)+"px";
+  p.style.animationDuration=(3+Math.random()*4)+"s";
+  p.style.animationDelay=Math.random()*1.5+"s";
+  document.body.appendChild(p);
+  setTimeout(()=>p.remove(),8000);
+ }
+}
+document.getElementById("celebrateBtn").addEventListener("click",()=>{
+ birthday.style.display="none";
+ final.style.display="flex";
+ shower();
+ window.scrollTo({top:0,behavior:"smooth"});
+});
+document.getElementById("againBtn").addEventListener("click",()=>{
+ final.style.display="none";
+ birthday.style.display="block";
+ window.scrollTo({top:0,behavior:"smooth"});
+});
+document.getElementById("mainFlower").addEventListener("click",shower);
 </script>
 </body>
 </html>
