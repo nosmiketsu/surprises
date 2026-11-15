@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday, Babe 🌻</title>
+<style>
+:root{--sun:#f5b700;--gold:#ffd84d;--deep:#241707;--cream:#fff8df;--muted:#d9c99e}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{min-height:100vh;overflow-x:hidden;color:var(--cream);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at 50% 10%,rgba(245,183,0,.18),transparent 30%),radial-gradient(circle at 15% 80%,rgba(109,143,61,.13),transparent 30%),linear-gradient(145deg,#100b03,#241707 48%,#0d0903)}
+button{font:inherit}
+.screen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:30px 18px;position:relative}
+.glow{position:absolute;width:360px;height:360px;border-radius:50%;background:rgba(245,183,0,.12);filter:blur(70px);pointer-events:none}
+.card{width:min(720px,100%);position:relative;z-index:2;padding:clamp(28px,6vw,60px);border:1px solid rgba(255,216,77,.25);background:rgba(30,20,5,.78);box-shadow:0 30px 100px rgba(0,0,0,.45);backdrop-filter:blur(14px);border-radius:28px;text-align:center}
+.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.3em;color:var(--gold);font-weight:800;margin-bottom:18px}
+h1{font-size:clamp(42px,9vw,76px);line-height:.95;letter-spacing:-.05em}
+.sub{color:var(--muted);line-height:1.7;margin:20px auto;max-width:560px}
+.sunflower{width:150px;height:150px;margin:0 auto 25px;display:grid;place-items:center;font-size:100px;cursor:pointer;user-select:none;filter:drop-shadow(0 15px 25px rgba(245,183,0,.2));animation:bob 4s ease-in-out infinite;transition:transform .3s}
+.sunflower:hover{transform:scale(1.06) rotate(3deg)}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.btn{min-height:50px;border:0;border-radius:14px;padding:13px 24px;cursor:pointer;font-weight:900;transition:.2s}
+.primary{background:var(--sun);color:#1d1200}.primary:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.secondary{background:transparent;color:var(--cream);border:1px solid rgba(255,216,77,.3)}.secondary:hover{background:rgba(255,216,77,.08)}
+.reveal{animation:reveal .8s ease both}
+@keyframes reveal{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+#birthday{display:none;padding-bottom:90px}
+.section{width:min(900px,100%);margin:auto;padding:30px 18px}
+.section-title{text-align:center;font-size:clamp(30px,6vw,50px);margin-bottom:12px}
+.section-copy{text-align:center;color:var(--muted);line-height:1.7;max-width:650px;margin:0 auto 30px}
+.info-grid,.memories{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.info{padding:22px;border-radius:18px;border:1px solid rgba(255,216,77,.17);background:rgba(255,255,255,.035);text-align:center}
+.info span{display:block;font-size:28px;margin-bottom:8px}.info b{font-size:14px}.info p{font-size:12px;color:var(--muted);margin-top:5px}
+.memories{margin-top:30px}
+.memory{min-height:170px;border:1px solid rgba(255,216,77,.18);border-radius:20px;background:linear-gradient(145deg,rgba(245,183,0,.09),rgba(255,255,255,.025));padding:24px;text-align:left;cursor:pointer;transition:.25s}
+.memory:hover{transform:translateY(-5px);border-color:rgba(255,216,77,.5)}
+.memory .icon{font-size:34px;margin-bottom:20px}.memory h3{font-size:17px;margin-bottom:7px}.memory p{font-size:13px;color:var(--muted);line-height:1.55}
+.memory.open{background:rgba(245,183,0,.12)}
+.letter{max-width:700px;margin:30px auto 0;padding:30px;border-radius:22px;background:rgba(255,248,223,.055);border:1px solid rgba(255,216,77,.18);line-height:1.9;color:var(--muted);text-align:left}
+.letter strong{color:var(--cream)}.letter p+p{margin-top:15px}.signature{color:var(--gold)!important;font-weight:900}
+.final{min-height:100vh;text-align:center;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:30px}
+.final-card{position:relative;z-index:2;max-width:680px}.final-card .big{font-size:clamp(70px,18vw,150px);line-height:.8;margin-bottom:28px}
+.final-card h2{font-size:clamp(35px,8vw,65px)}.final-card p{color:var(--muted);line-height:1.8;margin:18px auto;max-width:560px}
+.particle{position:fixed;top:-30px;pointer-events:none;z-index:20;animation:fall linear forwards}
+@keyframes fall{from{transform:translateY(-30px) rotate(0);opacity:1}to{transform:translateY(110vh) rotate(500deg);opacity:0}}
+@media(max-width:650px){.info-grid,.memories{grid-template-columns:1fr}.card{padding:32px 22px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<section id="intro" class="screen">
+<div class="glow"></div>
+<div class="card">
+<div class="eyebrow">A little surprise for you</div>
+<div id="introFlower" class="sunflower" aria-label="Sunflower">🌻</div>
+<h1>Hey, Babe!.</h1>
+<p class="sub">It's your birthday... and I made something just for you.</p>
+<button id="openBtn" class="btn primary">Open your birthday surprise 🌻</button>
+</div>
+</section>
+
+<main id="birthday">
+<section class="screen" style="min-height:80vh">
+<div class="glow"></div>
+<div class="card reveal">
+<div class="eyebrow">October 15, 2026 • Birthday Mission</div>
+<div class="sunflower" id="mainFlower">🌻</div>
+<h1>Happy Birthday,<br>Babe. ❤️</h1>
+<p class="sub">If I could give you one thing today, I'd give you all the sunshine you bring into my life — and maybe a field full of sunflowers too.</p>
+<button id="startBtn" class="btn primary">There's more 🌻</button>
+</div>
+</section>
+
+<section class="section" id="surprises">
+<h2 class="section-title">A few things I wish for you</h2>
+<p class="section-copy">Tap each one. I made these little wishes specifically for my birthday girl.</p>
+<div class="info-grid">
+<div class="info"><span>☀️</span><b>More sunshine</b><p>More days that make you genuinely happy.</p></div>
+<div class="info"><span>🌻</span><b>More adventures</b><p>More places, stories, and memories together.</p></div>
+<div class="info"><span>❤️</span><b>More love</b><p>And yes, I'll gladly volunteer for this one.</p></div>
+</div>
+
+<div class="memories">
+<div class="memory" tabindex="0"><div class="icon">🌻</div><h3>Why sunflowers?</h3><p>Because I remember asking you what your favorite flower was, and you said sunflower. I remembered that and kept it in my mind. 🌻❤️</p></div>
+<div class="memory" tabindex="0"><div class="icon">✨</div><h3>My favorite thing</h3><p>Seeing you happy and seeing your smile—honestly, that's one of my favorite views in the world. I still remember your smile while you were sitting in my car at Savanno Park on September 25, 2026. It’s one of those little moments that stayed in my mind. ❤️🌻</p></div>
+<div class="memory" tabindex="0"><div class="icon">🥰</div><h3>My birthday wish</h3><p>That I get to celebrate many, many more birthdays with you babe!</p></div>
+</div>
+
+<div class="letter">
+<p><strong>Happy birthday, Babe. ❤️</strong></p>
+<p>I hope this new year of your life brings you closer to every dream you've been quietly wishing for. I hope you laugh louder, smile more, and always remember just how loved you are.</p>
+<p>I chose sunflowers because you love this flower. They're warm. They're bright. They turn toward the light. And whenever I see one, I think of the happiness you bring into my life.</p>
+<p>Thank you for being you. Thank you for the little moments, the laughs, the chats, and even the ridiculous ones. I wouldn't trade them for anything.</p>
+<p><strong>Happy birthday, Babe.</strong> Here's to another year of you — and hopefully many more years of us. 🌻❤️</p>
+<p class="signature">— Your favorite person</p>
+</div>
+
+<div style="text-align:center;margin-top:35px">
+<button id="celebrateBtn" class="btn primary">Celebrate your birthday 🌻✨</button>
+</div>
+</section>
+</main>
+
+<section id="final" class="final" style="display:none">
+<div class="glow"></div>
+<div class="final-card reveal">
+<div class="big">🌻</div>
+<div class="eyebrow">Birthday Celebration Complete</div>
+<h2>You're my love of my life.</h2>
+<p>No matter how many birthdays come and go, I hope you always know that there is someone out here who will keep choosing you, cheering for you, waiting you, and loving you.</p>
+<p class="signature">Happy Birthday, Babe!. ❤️</p>
+<button id="againBtn" class="btn secondary">See it again</button>
+</div>
+</section>
+
+<script>
+const intro=document.getElementById("intro");
+const birthday=document.getElementById("birthday");
+const final=document.getElementById("final");
+
+function revealBirthday(){
+ intro.style.display="none";
+ birthday.style.display="block";
+ birthday.scrollIntoView({behavior:"smooth"});
+}
+document.getElementById("openBtn").addEventListener("click",revealBirthday);
+document.getElementById("introFlower").addEventListener("click",revealBirthday);
+document.getElementById("startBtn").addEventListener("click",()=>document.getElementById("surprises").scrollIntoView({behavior:"smooth"}));
+
+document.querySelectorAll(".memory").forEach(card=>{
+ const open=()=>card.classList.toggle("open");
+ card.addEventListener("click",open);
+ card.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" ")open()});
+});
+
+function shower(){
+ if(window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+ const symbols=["🌻","🌼","✨","💛","❤️"];
+ for(let i=0;i<55;i++){
+  const p=document.createElement("span");
+  p.className="particle";
+  p.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+  p.style.left=Math.random()*100+"vw";
+  p.style.fontSize=(16+Math.random()*22)+"px";
+  p.style.animationDuration=(3+Math.random()*4)+"s";
+  p.style.animationDelay=Math.random()*1.5+"s";
+  document.body.appendChild(p);
+  setTimeout(()=>p.remove(),8000);
+ }
+}
+document.getElementById("celebrateBtn").addEventListener("click",()=>{
+ birthday.style.display="none";
+ final.style.display="flex";
+ shower();
+ window.scrollTo({top:0,behavior:"smooth"});
+});
+document.getElementById("againBtn").addEventListener("click",()=>{
+ final.style.display="none";
+ birthday.style.display="block";
+ window.scrollTo({top:0,behavior:"smooth"});
+});
+document.getElementById("mainFlower").addEventListener("click",shower);
+</script>
+</body>
+</html>
