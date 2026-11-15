@@ -387,21 +387,4 @@ function createHearts(count){
 }
 </script>
 </body>
-</html>'''
-
-path = Path("/mnt/data/samantha-love-letter.html")
-path.write_text(html, encoding="utf-8")
-
-# Basic verification
-checks = [
-    "<!DOCTYPE html>" in html,
-    "<style>" in html,
-    "<script>" in html,
-    "Hi Babe," in html,
-    "Graduation, work, career, review center, board license" in html,
-    "openEnvelope" in html,
-    "createHearts" in html
-]
-print(f"Created: {path}")
-print(f"Size: {path.stat().st_size:,} bytes")
-print("Verification:", "PASS" if all(checks) else "FAILED")
+</html>
